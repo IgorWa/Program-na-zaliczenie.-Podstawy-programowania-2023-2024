@@ -1,0 +1,25 @@
+using System;
+using System.Linq;
+Random rng = new Random();
+
+Console.WriteLine("Witam w jedno pytaniowym quizie o Igorze Warchole, zostanie tobie zaprezentowane pytanie. Gdy odpowiesz na pytanie poprawnie wygrywasz! Natomiast, jeżeli odpowiesz źle przegrywasz. Powodzenia!");
+
+
+string[] Pytania = {"Ile razy miałem wstrząs mózgu?", "Czy miałem kiedyś miałem coś złamanego?", "Jaki jest mój ulubiony deser?", "Jak się nazywał mój szynszyl?", "Co się stało na ciężkowicach (dzielnica w Jaworznie, moim home town) pod prysznicem?", "Kto był w Paryżu?"};
+string[] Odpowiedzi = {"3", "nie", "lody", "szefuńcio", "tragedia", "paderewski i Dmowski"};
+
+int IndexPytania = rng.Next(Pytania.Length);
+Console.WriteLine($"{Pytania[IndexPytania]}");
+
+Console.WriteLine("Teraz wpisz odpowiedź");
+string OdpowiedzGracza;
+OdpowiedzGracza = Console.ReadLine()?.ToLower().Trim();
+
+if (OdpowiedzGracza.Equals(Odpowiedzi[IndexPytania], StringComparison.OrdinalIgnoreCase))
+{
+	 Console.WriteLine("Poprawna odpowiedź, wygrałeś!");
+}
+else
+{
+	Console.WriteLine("Błędna odpowiedź. Przegrałeś");
+}
